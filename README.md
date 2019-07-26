@@ -29,28 +29,43 @@ Implement an User Authentication System in order to access the jokes from the Jo
 Demonstrate your understanding of this week's concepts by answering the following free-form questions. Edit this document to include your answers after each question. Make sure to leave a blank line above and below your answer so it is clear and easy to read by your project manager.
 
 1. What is the purpose of using _sessions_?
+   Sessions allow authorized users to access restricted endpoints.
+   Sessions are created on the server when a user successfully logs in.
+   The server sends a cookie back to the browser which in turn, will send back the cookie with every request.
+   If the cookie corresponds to a valid session, the server will then authorize the response to be sent with the data requested.
+
 1. What does bcrypt do to help us store passwords in a secure manner.
+   Bcrypt help store passwords provided by the user on account creation in a secure fashion. The server has zero knowledge of the password, it only holds a unique enough hash of the password in its database. 
+   The password will then be salted wiht a unique secret to add further protection, so that if a same password is used by several unique users, the hash in the database will still be unique.
+
 1. What does bcrypt do to slow down attackers?
+   Bcrypt will hash the password the passwords over an over, which is a slow operation. The number of iterations of hash is configurable so that the current computing power to bruteforce the hashing will take a lot fo time and computing resources..
+
 1. What are the three parts of the JSON Web Token?
+   a JSON Web Token is composed of 3 segments of b64 encoded data: Header, Payload and Signature.
+   The Header is an object defining the type of JWT and tha algorithm used.
+   The Payload is an object usually containing user identification details but can also contain any number of arbitrary data. As it's not encrypted, it shouldn't contain any private or secret data.
+   The Signature, is a hash of the Header, the Payload and the Secret.
+
 
 ## Project Set Up
 
 Follow these steps to set up and work on your project:
 
-- [ ] Create a forked copy of this project.
-- [ ] Add PM as collaborator on Github.
-- [ ] Clone your OWN version of Repo (Not Lambda's by mistake!).
-- [ ] Create a new Branch on the clone: git checkout -b `<firstName-lastName>`.
-- [ ] Implement the project on this Branch, committing changes regularly.
-- [ ] Push commits: git push origin `<firstName-lastName>`.
+- [x] Create a forked copy of this project.
+- [x] Add PM as collaborator on Github.
+- [x] Clone your OWN version of Repo (Not Lambda's by mistake!).
+- [x] Create a new Branch on the clone: git checkout -b `<firstName-lastName>`.
+- [x] Implement the project on this Branch, committing changes regularly.
+- [x] Push commits: git push origin `<firstName-lastName>`.
 
 Follow these steps for completing your project:
 
-- [ ] `cd` into the root of the project and run `yarn` to install dependencies.
-- [ ] Once you have your `node_modules` go ahead and run `yarn server` or `npm run server` to start your node server.
-- [ ] Submit a Pull-Request to merge <firstName-lastName> Branch into master (student's  Repo).
-- [ ] Add your Project Manager as a Reviewer on the Pull-request
-- [ ] PM then will count the HW as done by  merging the branch back into master.
+- [x] `cd` into the root of the project and run `yarn` to install dependencies.
+- [x] Once you have your `node_modules` go ahead and run `yarn server` or `npm run server` to start your node server.
+- [x] Submit a Pull-Request to merge <firstName-lastName> Branch into master (student's  Repo).
+- [x] Add your Project Manager as a Reviewer on the Pull-request
+- [x] PM then will count the HW as done by  merging the branch back into master.
 
 Helpful Tip on Testing this Project:
 
