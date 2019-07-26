@@ -83,5 +83,5 @@ typings/
 .vscode
 
 # Database
-
 database/auth.db3
+database/test.db3

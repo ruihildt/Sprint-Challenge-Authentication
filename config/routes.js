@@ -1,5 +1,4 @@
 const axios = require('axios');
-const express = require('express');
 const bcrypt = require('bcryptjs');
 
 const db = require('../database/dbConfig');
